@@ -10,5 +10,8 @@ app.get('/customer', function(req, res){
 app.get('/admin', function(req, res){
     res.send('admin page');
 });
+app.get('/hyq',function (req,res) {
+    res.send('hyq');
+});
 
 app.listen(3000);
