@@ -19,7 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(app);//创建服务器
 
 /**
  * Listen on provided port, on all network interfaces.

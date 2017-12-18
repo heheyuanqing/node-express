@@ -1,0 +1,30 @@
+[
+  {
+    "name":"小红",
+    "sex":"girl",
+    "professional":"网络",
+    "class":"1502",
+    "number":"04152090"
+  },
+  {
+    "name":"小名",
+    "sex":"boy",
+    "professional":"网络",
+    "class":"1502",
+    "number":"04152044"
+  },
+  {
+    "name":"heo",
+    "sex":"boy",
+    "professional":"网络",
+    "class":"1502",
+    "number":"04152055"
+  },
+  {
+    "name":"mary",
+    "sex":"boy",
+    "professional":"网络",
+    "class":"1502",
+    "number":"04152088"
+  }
+]
