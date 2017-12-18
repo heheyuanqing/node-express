@@ -1,22 +1,23 @@
 window.onload = function (){
-    // var result = documemt.getElementById("result");
     var btn = document.getElementById("btn");
 
     btn.addEventListener('click', function () {
-
+       // var result = documemt.getElementById("result");
         var name = document.getElementById("name").value;
-        $.ajax({
-            url: '/data',
-            method: 'GET',
-            data:{
-                name:name
-            },
-            dataType:'jsonp',
-            success:function(data){
-                console.log(data);
-            }
-        });
-    /*    var xhr;
+        // $.ajax({
+        //     url: '/data',
+        //     method: 'GET',
+        //     data:{
+        //         name:name
+        //     },
+        //     dataType:'jsonp',
+        //     success:function(data){
+        //         console.log(data);
+        //     }
+        // });
+
+
+        var xhr;
         var url = '/data'+'?name='+name;
 
         if (window.XMLHttpRequest) {
@@ -33,6 +34,6 @@ window.onload = function (){
 
         };
         xhr.open("GET",url,true);
-        xhr.send();*/
+        xhr.send();
     },false);
 };

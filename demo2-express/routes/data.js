@@ -4,19 +4,15 @@ var router = express.Router();
 
 router.get('/',function(req,res,next){
     var name = req.query.name;
-    console.log(name);
-    res.send(name);
-    // var url = req.path;
-    // console.log(req);
-  /*console.log(name);
-    if(!url){
+    var url = req.url;
+    if(!name||!url){
         return res.send({
             status:0,
             info:'提交字段不全'
         });
     }
     else{
-        var filePath = '/public/data/studentsInformations.json';
+        var filePath = __dirname+'studentInformations.json';
         fs.readFile(filePath,function(err,data){
             if(err){
                 return res.send({
@@ -25,10 +21,15 @@ router.get('/',function(req,res,next){
                 })
             }
             else{
-                console.log("success ");
+                console.log("success");
+                for(var i=0;i<data.length;i++){
+                    if(name === data[i].name){
+                        res.send(data[i]);
+                    }
+                }
             }
         });
-    // }*/
+     }
 
 
 });
