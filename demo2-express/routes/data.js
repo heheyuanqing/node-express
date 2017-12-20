@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/',function(req,res,next){
     var name = req.query.name;
     var url = req.url;
+    var filepath =__dirname+ '/../public/data/data.json';
     if(!name||!url){
         return res.send({
             status:0,
@@ -12,8 +13,7 @@ router.get('/',function(req,res,next){
         });
     }
     else{
-        var filePath = __dirname+'studentInformations.json';
-        fs.readFile(filePath,function(err,data){
+        fs.readFile(filepath,function(err,data){
             if(err){
                 return res.send({
                     status:0,
@@ -21,14 +21,18 @@ router.get('/',function(req,res,next){
                 })
             }
             else{
-                console.log("success");
+                console.log("open file success");
+                data = data.toString();
+                data = JSON.parse(data).infor;
                 for(var i=0;i<data.length;i++){
                     if(name === data[i].name){
-                        res.send(data[i]);
+                        return res.send(data[i]);
                     }
                 }
             }
         });
+
+
      }
 
 
