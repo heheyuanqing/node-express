@@ -7,20 +7,22 @@ window.onload = function (){
 
     btn.addEventListener('click', function () {
         var name = document.getElementById("name").value;
-      /*  $.ajax({
-            url: '/data',
+        $.ajax({
+            url: 'http://localhost:3000/data/',
             method: 'GET',
             data:{
                 name:name
             },
             dataType:'jsonp',
+            jsonp:'callback',
+            jsonpCallback:'student',
             success:function(data){
-                console.log(data);
+                searchResult(data)
             }
-        });*/
+        });
 
-        var xhr;
-        var url = '/data'+'?name='+name;
+     /*   var xhr;
+        var url = 'http://localhost:3000/data/'+'?name='+name;
 
         if (window.XMLHttpRequest) {
             xhr = new XMLHttpRequest();
@@ -36,7 +38,7 @@ window.onload = function (){
 
         };
         xhr.open("GET",url,true);
-        xhr.send();
+        xhr.send();*/
     },false);
 
     function searchResult(data) {
@@ -50,7 +52,6 @@ window.onload = function (){
         var cls = document.createElement('td');
         var num = document.createElement('td');
 
-        data = JSON.parse(data);
 
         result.appendChild(table);
         table.appendChild(tbody);
